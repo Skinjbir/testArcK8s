@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testarck8s-deployment
+  labels:
+    app: testarck8s
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: testarck8s
+  template:
+    metadata:
+      labels:
+        app: testarck8s
+    spec:
+      containers:
+        - name: testarck8s
+          image: mtarmidi/testarck8s:1.0.0
+          ports:
+            - containerPort: 80
