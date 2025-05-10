@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: testarck8s
-  namespace: default
   labels:
     app: testarck8s
 spec:
@@ -16,7 +15,7 @@ spec:
         app: testarck8s
     spec:
       containers:
-        - name: testarck8s
-          image: mtarmidi/testarck8s:1.0.0  # Flux will auto-update this tag
-          ports:
-            - containerPort: 80
+      - name: testarck8s
+        image: mtarmidi/testarck8s:1.0.0
+        ports:
+        - containerPort: 7071
