@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: testarck8s
-  namespace: default  
-
+  namespace: default
 spec:
   selector:
     app: testarck8s
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 7071
-  type: LoadBalancer
+    - protocol: TCP
+      port: 80
+      targetPort: 7071
+      nodePort: 30080
+  type: NodePort
