@@ -1,0 +1,5 @@
+resources:
+  - deployment.yaml
+  - image-repo.yaml
+  - image-policy.yaml
+  - image-update.yaml

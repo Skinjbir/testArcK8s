@@ -1,0 +1,21 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageUpdateAutomation
+metadata:
+  name: testarck8s-update
+  namespace: flux-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: myapp-gitops  # Must match the name from az k8s-configuration flux create
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        name: flux-bot
+        email: flux@example.com
+      messageTemplate: "Update image to {{range .Updated.Images}}{{.}}{{end}}"
+    push:
+      branch: main
