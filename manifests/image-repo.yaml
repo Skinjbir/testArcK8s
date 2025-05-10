@@ -6,3 +6,4 @@ metadata:
 spec:
   image: mtarmidi/testarck8s
   interval: 1m
+  provider: docker
