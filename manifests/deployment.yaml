@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: testarck8s
-          image: mtarmidi/testarck8s:1.0.0  # Flux will auto-update this tag
+          image: mtarmidi/testarck8s:1.0.2  # Flux will auto-update this tag
           ports:
             - containerPort: 80
