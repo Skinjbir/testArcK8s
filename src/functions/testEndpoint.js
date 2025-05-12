@@ -1,13 +1,20 @@
 const { app } = require('@azure/functions');
 
-app.http('testEndpoint', {
-    methods: ['GET', 'POST'],
+app.http('fancyHelloWorld', {
+    methods: ['GET'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
-        context.log(`Http function processed request for url "${request.url}"`);
+        context.log(`Fancy endpoint hit at "${request.url}"`);
 
-        const name = request.query.get('name') || await request.text() || 'world';
+        const response = {
+            message: '✨ Hello, World! 🌍',
+            timestamp: new Date().toISOString(),
+            requestId: context.invocationId
+        };
 
-        return { body: `Hello, ${name}!` };
+        return { 
+            headers: { 'Content-Type': 'application/json' },
+            body: response 
+        };
     }
 });
