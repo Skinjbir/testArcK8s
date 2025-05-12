@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: testarck8s
-          image: mtarmidi/testarck8s:1.0.1
+          image: mtarmidi/testarck8s
           ports:
             - containerPort: 80
