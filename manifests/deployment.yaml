@@ -16,6 +16,11 @@ spec:
     spec:
       containers:
         - name: testarck8s
-          image: mtarmidi/testarck8s  # ← tag is injected by Kustomize
+          image: mtarmidi/testarck8s:1.0.0  
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"  
+            limits:
+              cpu: "200m"   
