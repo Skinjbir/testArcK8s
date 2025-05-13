@@ -5,15 +5,20 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.tls.certresolver: le
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
     - host: testarck8s.onpremvm.duckdns.org
       http:
         paths:
           - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: testarck8s
+                port:
+                  number: 80
+          - path: /api
             pathType: Prefix
             backend:
               service:
