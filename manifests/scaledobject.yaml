@@ -8,6 +8,8 @@ spec:
     name: testarck8s
   minReplicaCount: 1
   maxReplicaCount: 5
+  pollingInterval: 30      # How often (in seconds) to check metrics (default is 30s)
+  cooldownPeriod: 60       # How long to wait (in seconds) after metrics go below threshold before scaling down (default is 300s)
   triggers:
     - type: cpu
       metadata:
