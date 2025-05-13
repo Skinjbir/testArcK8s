@@ -8,4 +8,4 @@ resources:
 
 images:
   - name: mtarmidi/testarck8s
-    newTag: v1.0.0  # update this to the latest pushed tag
+    newTag: 1.0.0  # update this to the latest pushed tag
