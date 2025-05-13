@@ -6,6 +6,4 @@ resources:
   - app-ingress.yaml
 
 
-images:
-  - name: mtarmidi/testarck8s
-    newTag: 202405121600  # This gets updated by GitHub Actions
+    
