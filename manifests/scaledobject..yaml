@@ -1,0 +1,15 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: testarck8s-scaler
+  namespace: default
+spec:
+  scaleTargetRef:
+    name: testarck8s
+  minReplicaCount: 1
+  maxReplicaCount: 5
+  triggers:
+    - type: cpu
+      metadata:
+        type: Utilization
+        value: "20"

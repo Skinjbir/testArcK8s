@@ -5,6 +5,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - app-ingress.yaml
+  - scaledobject.yaml
 
 images:
   - name: mtarmidi/testarck8s
