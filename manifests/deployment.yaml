@@ -6,7 +6,6 @@ metadata:
   labels:
     app: testarck8s
 spec:
-  replicas: 10
   selector:
     matchLabels:
       app: testarck8s
